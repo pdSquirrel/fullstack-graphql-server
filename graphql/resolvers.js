@@ -41,14 +41,14 @@ const resolvers = {
 
   Mutation: {
     upvote: (root, {id}) => {
-      const course = courseData.filter(course => {
+      const course = coursesData.filter(course => {
         return course.id === id;
       })[0]
       course.voteCount++;
       return course;
     },
     downvote: (root, {id}) => {
-      const course = courseData.filter(course => {
+      const course = coursesData.filter(course => {
         return course.id === id;
       })[0]/* answer will be returned in an array, thats why we pick it of with [0] */
       course.voteCount--;
